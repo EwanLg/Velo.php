@@ -1,0 +1,131 @@
+{
+    "cde": {
+        "detaillant": [
+            {
+                "-numero": "A101",
+                "produit": [
+                    {
+                        "reference": "V1256",
+                        "nom": "VTT 512",
+                        "qte": "8"
+                    },
+                    {
+                        "reference": "V1166",
+                        "nom": "VTT 418",
+                        "qte": "6"
+                    },
+                    {
+                        "reference": "V0822",
+                        "nom": "VTT 400",
+                        "qte": "6"
+                    },
+                    {
+                        "reference": "R1256",
+                        "nom": "VTC 804",
+                        "qte": "9"
+                    },
+                    {
+                        "reference": "R1218",
+                        "nom": "VTC 504",
+                        "qte": "4"
+                    },
+                    {
+                        "reference": "R415",
+                        "nom": "Route 1206",
+                        "qte": "7"
+                    },
+                    {
+                        "reference": "R302",
+                        "nom": "Route 1222",
+                        "qte": "4"
+                    }
+                ]
+            },
+            {
+                "-numero": "A104",
+                "produit": [
+                    {
+                        "reference": "V1166",
+                        "nom": "VTT 418",
+                        "qte": "3"
+                    },
+                    {
+                        "reference": "V0822",
+                        "nom": "VTT 400",
+                        "qte": "4"
+                    },
+                    {
+                        "reference": "R1220",
+                        "nom": "VTC 509",
+                        "qte": "4"
+                    },
+                    {
+                        "reference": "R415",
+                        "nom": "Route 1206",
+                        "qte": "3"
+                    }
+                ]
+            },
+            {
+                "-numero": "A105",
+                "produit": [
+                    {
+                        "reference": "V1256",
+                        "nom": "VTT 512",
+                        "qte": "6"
+                    },
+                    {
+                        "reference": "R1256",
+                        "nom": "VTC 804",
+                        "qte": "3"
+                    },
+                    {
+                        "reference": "R1218",
+                        "nom": "VTC 504",
+                        "qte": "3"
+                    },
+                    {
+                        "reference": "R415",
+                        "nom": "Route 1206",
+                        "qte": "4"
+                    },
+                    {
+                        "reference": "R302",
+                        "nom": "Route 1222",
+                        "qte": "5"
+                    }
+                ]
+            },
+            {
+                "-numero": "A106",
+                "produit": [
+                    {
+                        "reference": "R1256",
+                        "nom": "VTC 804",
+                        "qte": "12"
+                    },
+                    {
+                        "reference": "R1218",
+                        "nom": "VTC 504",
+                        "qte": "14"
+                    },
+                    {
+                        "reference": "R415",
+                        "nom": "Route 1218",
+                        "qte": "13"
+                    },
+                    {
+                        "reference": "R302",
+                        "nom": "Route 1222",
+                        "qte": "11"
+                    },
+                    {
+                        "reference": "R309",
+                        "nom": "Route 1229",
+                        "qte": "8"
+                    }
+                ]
+            }
+        ]
+    }
+}

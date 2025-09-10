@@ -1,0 +1,151 @@
+html {
+	height: 100%;
+}
+
+body {
+	font: 1em Verdana, Arial, Helvetica, sans-serif;
+		
+	/* fond avec un dégradé de couleur (blanc en haut, gris en bas) */
+	background: -moz-linear-gradient(top, rgb(255, 255, 255), rgb(210, 210, 210));
+	background: -webkit-gradient(linear, left top, left bottom, from(rgb(255, 255, 255)), to(rgb(210, 210, 210)));
+	background: linear-gradient(to bottom, rgb(255, 255, 255), rgb(210, 210, 210));
+}
+/*
+body
+{ 
+    background-color: #CCFFFF;
+}
+*/
+
+/* style de la division id="page" */
+div#page {
+	/* largeur, centrage avec des marges auto, padding, bordure noire, alignement gauche */
+	width: 600px;
+	margin: 20px auto;
+	padding: 0px 20px;
+	border: #000 1px solid; 
+	text-align: left;
+			
+	/* coins arrondis avec un rayon de 15 pixels */
+	-moz-border-radius: 15px;
+	-webkit-border-radius: 15px;
+	-o-border-radius: 15px;
+	-ms-border-radius: 15px;
+	-khtml-border-radius: 15px;
+	border-radius: 15px;
+			
+	/* fond avec un dégradé de couleur (blanc en haut, gris léger en bas) */
+	background: -moz-linear-gradient(top, rgb(255, 255, 255), rgb(210, 210, 210));
+	background: -webkit-gradient(linear, left top, left bottom, from(rgb(255, 255, 255)), to(rgb(210, 210, 210)));
+	background: linear-gradient(to bottom, rgb(255, 255, 255), rgb(225, 225, 225));
+}
+
+/* styles des zones de saisies de textes */
+input[type=text], input[type=password], input[type=email] {
+	border: solid 1px grey;
+	width: 200px;
+	display: inline-block;
+}
+
+/* styles des <label> */
+label {
+	width: 200px;
+	text-align: left;
+	display: inline-block;
+}
+
+/* style du bouton de validation du formulaire */
+input[type=submit] {
+	font: 1em helvetica, sans-serif;
+	border: solid 1px grey;
+	width: 100px;
+	display: inline-block;
+	margin-left: 250px;
+	background-color: #ddd;
+}
+
+/* transformation en boutons des liens hypertextes <a> avec l'attribut class="bouton-menu" */
+a.bouton-menu {
+	/* police, couleur et alignement du texte, style du lien */
+	font: 1em helvetica, sans-serif;
+	color: #000;
+	text-align: center;
+	text-decoration: none;
+		
+	/* dimensions, margin, padding, type d'affichage, bordure */
+	width: 300px;
+	margin: 20px auto;
+	padding: 2px;
+	display: block;
+	border: solid 1px grey;
+}
+
+.titre
+{
+    font-size: xx-large;
+    text-align: left;
+}
+.stitre
+{
+    font-size: large;
+}
+.texteLong
+{
+    text-align: justify;
+    font-size: x-large;
+}
+#entete
+{
+    text-align: center;
+}
+#partie_gauche
+{
+    position: absolute;
+    top: 32%;
+    left: 2%;
+    height: 58%;
+    width:55%;
+}
+#partie_droite
+{
+    position: absolute;
+    top: 32%;
+    left: 54%;
+    width:42%;
+    height: 58%;
+    color : blue;
+    text-align:justify;
+}
+/*Mise en forme de tableau dans la div corps*/
+#corps.table
+{
+	/*border: medium solid #9AA65F;
+	border-collapse: collapse;*/
+	width: 100%;
+        align : center;
+	margin : auto; /*pour centrer horizontalement*/
+}
+
+th
+{
+	font-family: monospace;
+	/*border: thin solid #9AA65F;*/
+	width: 25%;
+	padding: 5px;
+	background-color: #00AFFF;
+	/*background-image: url(sky.jpg);*/
+}
+td
+{
+	font-family: sans-serif;
+	/*border: thin solid #9AA65F;*/
+	width: 25%;
+	padding: 5px;
+	/*text-align: center;*/
+	background-color: #ffffff;
+}
+caption
+{
+	font-family: sans-serif;
+	font-size : 36px;
+}
