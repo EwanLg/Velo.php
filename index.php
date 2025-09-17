@@ -30,6 +30,24 @@ switch($action){
 	case 'JSON': {
 		include_once ('controleurs/CtrlJSON.php'); break;
 	}
+	case 'Commandes': {
+		include_once ('controleurs/CtrlCommandes.php'); break;
+	}
+	case 'Pieces': {
+		include_once ('controleurs/CtrlPieces.php'); break;
+	}
+	case 'PDFCommandes': {
+		include_once ('controleurs/CtrlPDFCommandes.php'); break;
+	}
+	case 'PrintCommandes': {
+		include_once ('controleurs/CtrlPrintCommandes.php'); break;
+	}
+	case 'PDFPieces': {
+		include_once ('controleurs/CtrlPDFPieces.php'); break;
+	}
+	case 'PrintPieces': {
+		include_once ('controleurs/CtrlPrintPieces.php'); break;
+	}
 	default : {
 		// toute autre tentative est automatiquement redirigée vers l'accueil de l'application
 		include_once ('controleurs/CtrlAccueil.php'); break;

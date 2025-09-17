@@ -9,47 +9,42 @@
 // __destruct() : le destructeur ferme la connexion $cnx à la base de données
 // getCalendrier() : retourne le calendrier des courses
 
-// inclusion des paramètres de l'application et de la classe Course
-include_once ('parametres.php');
-include_once ('Course.php');
-include_once ('Resultat.php');
+
 
 
 // début de la classe DAO (Data Access Object)
 class DAO
 {
+    // Parse orders from cdes.json and return as array
+    public function getCommandesJSON($jsonFile = '../cdes.json')
+    {
+        $orders = [];
+        if (!file_exists($jsonFile)) return $orders;
+        $json = file_get_contents($jsonFile);
+        $data = json_decode($json, true);
+        if (!$data || !isset($data['cde']['detaillant'])) return $orders;
+        foreach ($data['cde']['detaillant'] as $detaillant) {
+            $numero = $detaillant['-numero'];
+            $produits = [];
+            foreach ($detaillant['produit'] as $produit) {
+                $produits[] = [
+                    'reference' => $produit['reference'],
+                    'nom' => $produit['nom'],
+                    'qte' => $produit['qte']
+                ];
+            }
+            $orders[$numero] = $produits;
+        }
+        return $orders;
+    }
     // ------------------------------------------------------------------------------------------------------
     // ---------------------------------- Membres privés de la classe ---------------------------------------
     // ------------------------------------------------------------------------------------------------------
     
-    private $cnx;				// la connexion à la base de données
     
     // ------------------------------------------------------------------------------------------------------
     // ---------------------------------- Constructeur et destructeur ---------------------------------------
     // ------------------------------------------------------------------------------------------------------
-    public function __construct()
-    {
-        global $PARAM_HOTE, $PARAM_PORT, $PARAM_BDD, $PARAM_USER, $PARAM_PWD;
-        try
-        {	$this->cnx = new PDO ("mysql:host=" . $PARAM_HOTE . ";port=" . $PARAM_PORT . ";dbname=" . $PARAM_BDD,
-            $PARAM_USER,
-            $PARAM_PWD);
-        return true;
-        }
-        catch (Exception $ex)
-        {
-            echo ("Echec de la connexion a la base de donnees <br>");
-            echo ("Erreur numero : " . $ex->getCode() . "<br />" . "Description : " . $ex->getMessage() . "<br>");
-            echo ("PARAM_HOTE = " . $PARAM_HOTE);
-            return false;
-        }
-    }
-    
-    public function __destruct()
-    {
-        // ferme la connexion à MySQL :
-        unset($this->cnx);
-    }
     
     // ------------------------------------------------------------------------------------------------------
     // -------------------------------------- Méthodes d'instances ------------------------------------------
@@ -67,7 +62,6 @@ class DAO
         $txt_req = "Select nom, lieu, date, heureDepart, distance, prix, challenge";
         $txt_req .= " from course";
 
-        $req = $this->cnx->prepare($txt_req);
         
         // liaison de la requête et de ses paramètres
         // $req->bindValue("param1", $param1, PDO::PARAM_STR);
@@ -111,7 +105,6 @@ class DAO
         $txt_req .= " where nom = :nom";
         echo $txt_req;
 
-        $req = $this->cnx->prepare($txt_req);
         
         // liaison de la requête et de ses paramètres
         $req->bindValue("nom", $pnom, PDO::PARAM_STR);
@@ -145,7 +138,6 @@ class DAO
     $txt_req .= "FROM courir ";
     $txt_req .= "ORDER BY nomCourse, place";
 
-    $req = $this->cnx->prepare($txt_req);
 
     $req->execute();
 
@@ -170,7 +162,6 @@ class DAO
     $txt_req .= "WHERE nomCourse = :nomCourse ";
     $txt_req .= "ORDER BY place";
 
-    $req = $this->cnx->prepare($txt_req);
 
     $req->bindValue("nomCourse", utf8_encode($pnomCourse), PDO::PARAM_STR);
 

@@ -1,3 +1,8 @@
+html, body {
+    height: 100%;
+    min-height: 100vh;
+}
+
 html {
 	height: 100%;
 }
@@ -5,11 +10,12 @@ html {
 body {
 	font: 1em Verdana, Arial, Helvetica, sans-serif;
 		
-	/* fond avec un dégradé de couleur (blanc en haut, gris en bas) */
-	background: -moz-linear-gradient(top, rgb(255, 255, 255), rgb(210, 210, 210));
-	background: -webkit-gradient(linear, left top, left bottom, from(rgb(255, 255, 255)), to(rgb(210, 210, 210)));
-	background: linear-gradient(to bottom, rgb(255, 255, 255), rgb(210, 210, 210));
+	/* fond avec un dégradé de couleur (blanc en haut, gris en bas) qui couvre toute la page */
+	background: linear-gradient(to bottom, rgb(255,255,255), rgb(210,210,210));
+	background-repeat: no-repeat;
+	background-attachment: fixed;
 }
+
 /*
 body
 { 
@@ -148,4 +154,14 @@ caption
 {
 	font-family: sans-serif;
 	font-size : 36px;
+}
+
+/* Bloc imprimable centré et avec ombre légère */
+.print-block {
+    max-width: 700px;
+    margin: 40px auto;
+    background: rgba(255,255,255,0.95);
+    border-radius: 16px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+    padding: 32px 24px;
 }
